@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<style media="screen">
+  .container{
+    margin-top: 160px;
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome To <ct>Connect Four!</ct></h1><hr><br> 
+        <form class="" action="game.html">
+          <div class="form-group">
+            <label for="p1">Player 1 Name</label>
+            <input id="p1" class="form-control" type="text" placeholder="Enter Player one Name">
+          </div>
+          <div class="form-group">
+            <label for="p2">Player 2 Name</label>
+            <input id="p2" class="form-control" type="text" placeholder="Enter Player Two Name">
+          </div>
+          <button class="btn btn-outline-primary" type="submit" name="button">Lets Play!</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var data=document.querySelector(".btn");
+    data.addEventListener("click", function(){
+      var p1=document.querySelector("#p1").value; var p2=document.querySelector("#p2").value; localStorage.setItem("ob1",p1);localStorage.setItem("ob2",p2)})
+      function randomColor()
+      {
+        var letter="0123456789ABCDEF";
+        var color="#";
+        for(i=0;i<6;i++)
+        color+=letter[Math.floor(Math.random()*16)];
+        return color;
+      }
+      function f()
+      {
+        var head=document.querySelector("ct");
+
+        colorInput=randomColor();
+        head.style.color=colorInput;
+      }
+      setInterval("f()",500);
+  </script>
+</html>
